@@ -37,3 +37,25 @@ Kolmogorov-Smirnov test was performed to all numerical features to check whether
 No predictive feature has outliers. The target variable `Delivery_Time_min` has 5 outliers greater than the upper fence that account for 0.5% of the data.
 
 ![Box Plot of Numerical Features](figures/boxplots_num.png)
+
+## Categorical Features Exploration
+
+This analysis includes the rest of features in the dataset: weather, traffic level, time of day and vehicle type, as well as their interaction with the target delivery time.
+
+The distribution per category of each variable is not homogeneous. There are significant differences that could affect the learning mechanism of a Machine Learning model.
+
+At first glance there seems to a correlation between some categorical values and the target:
+
+* The avg delivery time on days of clear weather is 7 min faster than rainy days and the difference doubles for snowy days.
+* Unlike what would be expected, on average deliveries take the longest on days with lower traffic level.
+* However, there is no significant difference in the average delivery time across time of day or vehicle type.
+
+![Distribution of Categorical Features and Avg Delivery Time by Category](figures/distribution_categ.png)
+
+Comparing the behaviour of the delivery time across different categories, most of the data has the same dispersion and skewness regardless of the category. Although there are slight differences in the median across different categories, as discussed above regarding the average per category.
+
+![Delivery Time by Categorical Features](figures/boxplots_categ.png)
+
+Since Pearson's correlation cannot be used to identify correlation between categorical variables, a Chi-squared test was applied to identify possible multicollinearity between categorical features. Based on an $\alpha$ = 0.05, there is no significant correlation in any two pair of variables.
+
+!['Categorical Feature Correlation (Chi-squared test p-value)](figures/heatmap_categ.png)
