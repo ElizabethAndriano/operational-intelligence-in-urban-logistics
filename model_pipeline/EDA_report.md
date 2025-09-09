@@ -59,3 +59,15 @@ Comparing the behaviour of the delivery time across different categories, most o
 Since Pearson's correlation cannot be used to identify correlation between categorical variables, a Chi-squared test was applied to identify possible multicollinearity between categorical features. Based on an $\alpha$ = 0.05, there is no significant correlation in any two pair of variables.
 
 !['Categorical Feature Correlation (Chi-squared test p-value)](figures/heatmap_categ.png)
+
+# Numerical-Categorical Feature Correlation
+
+Since the dataset has categorical and numerical variables, it is necessary to perform a final correlation test to ensure that there exists no multicollinearity between any pair of variables. 
+
+Considering an $\alpha$ = 0.05 for the Point-biserial Correlation, there is no significant correlation between any predictor variables. Whilst there is a correlation between the target `Delivery_Time_min` and two categorical variables,`Traffic_Level` and `Weather`, as previously discovered when analyzing the average by category.
+
+![Numerical-Categorical Feature Correlation (Point-biserial Correlation)](figures/heatmap_num_categ.png)
+
+Since no pair of variables have a significant correlation, a PCA would not be suitable for this case. This also guarantees better interpretability of possible models based on the original features of the dataset.
+
+Furthermore, with little correlation between variables, missing values cannot be filled based on other columns and should be filled according the variable distribution or dropped from the model.
