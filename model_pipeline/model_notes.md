@@ -4,7 +4,7 @@
 
 The data preprocessing process was executed by the following steps:
 
-1. **Handling Missing Values**: based on the EDA insights, all predictor variables have no significant correlation. Thus they cannot be used to fill missing values. I decided the best aproach was to drop missing values instead of using backpropagation or filling with mean values to avoid leakage that could compromise the integrity of the final model.
+1. **Handling Missing Values**: based on the EDA insights, all predictor variables have no significant correlation. Thus they cannot be used to fill missing values. I decided the best aproach was to drop missing values instead of using backfill or replace with mean values to avoid leakage that could compromise the integrity of the final model.
 
 2. **Feature encoding**: in order to use categorical features in different Machine Learning algorithms, their features were encoded into integers following two different aproaches:
 
