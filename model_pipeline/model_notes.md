@@ -83,3 +83,13 @@ After the grid search, the new models were compared to their base models and the
 |  Baseline Bayesian Ridge  | clean_data_3 |    0.751822   |   0.035869   |  0.835099  |
 
 Since the original parameters from the Linear SVR have better performance in the test set, it is the best model from the selected ML algorithms to explain and predict the delivery time.
+
+# Concluding insights
+
+Even though the best score was achieved by the Linear SVR model, my suggestion would be to stay with the Linear Regression model for n motives:
+
+* The model coeficients have better explainability that can help not only to predict delivery time but also give relevant insights that the Ops team can understand without the need of special tools.
+
+* Its efficient algorithm enables the possibility of faster retraining in case the business changes frequently and shifts the delivery time trend.
+
+* The linear regression doesn't need high data preprocessing and can easily take on new variables as the business or the data evolve.
