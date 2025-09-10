@@ -33,3 +33,34 @@ For starting point in the modeling process, a Multivariable Linear Regression wi
         Linear Regression 
         mean cross-validation score: 0.7517 with a standard deviation of 0.0366
         test score: 0.8351
+
+## Model comparison
+
+Different types of models will be used to compare their score against the baseline model to choose the best ones for fine-tuning. 
+
+Eight different regression Machine Learning Models were chosen: 
+* Gamma Regression
+* Bayesian Ridge
+* Gradient Boosting
+* Random Forest
+* Decision Tree
+* LightGBM
+* Linear SVR
+* KNeighbors
+
+All models were trained with the same train-test split and base parameters from their corresponding python library.
+
+**Best performance per model ordered by test score**
+
+|               model              |    dataset   | score cv mean | score cv std | score test |
+|:--------------------------------:|:------------:|:-------------:|:------------:|:----------:|
+| Linear Support Vector Regression | clean_data_2 |    0.748834   |   0.031044   |  0.836097  |
+|          Bayesian Ridge          | clean_data_3 |    0.751822   |   0.035869   |  0.835099  |
+|         Gradient Boosting        | clean_data_4 |    0.725160   |   0.035505   |  0.770479  |
+|           Random Forest          | clean_data_3 |    0.699834   |   0.053504   |  0.762628  |
+|             LightGBM             | clean_data_4 |    0.717549   |   0.039740   |  0.761799  |
+|         Gamma Regression         | clean_data_2 |    0.723414   |   0.034846   |  0.759337  |
+|            KNeighbors            | clean_data_2 |    0.759337   |   0.061167   |  0.720834  |
+|           Decision Tree          | clean_data_3 |    0.361068   |   0.111591   |  0.411825  |
+
+Since only Linear SVR and Bayesian Ridge models have similar or better outcomes than the Linear Regression, they will be the only models that will have hyperparameter fine-tuning.
