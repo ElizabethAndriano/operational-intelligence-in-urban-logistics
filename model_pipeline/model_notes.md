@@ -64,3 +64,22 @@ All models were trained with the same train-test split and base parameters from 
 |           Decision Tree          | clean_data_3 |    0.361068   |   0.111591   |  0.411825  |
 
 Since only Linear SVR and Bayesian Ridge models have similar or better outcomes than the Linear Regression, they will be the only models that will have hyperparameter fine-tuning.
+
+## Hyperparameter fine-tuning
+
+The best two models from the original eight options have different hyperparameters that can be adjusted in order to et better predictions from the model.
+
+`GridSearchCV` is a cross-validation tecnique that helps find the optimal parameters by doing an exhaustive search over specified parameter values for an estimator. It returns the parameters with the best validation score from the training data.
+
+After the grid search, the new models were compared to their base models and the Linear Regression model to select the best model for the business problem.
+
+**Best performance per fine-tuned model ordered by test score**
+
+|           model           |    dataset   | score cv mean | score cv std | score test |
+|:-------------------------:|:------------:|:-------------:|:------------:|:----------:|
+|    Baseline Linear SVR    | clean_data_2 |    0.749425   |   0.030659   |  0.837862  |
+|   Fine-tuned Linear SVR   | clean_data_2 |    0.751859   |   0.035624   |  0.835404  |
+| Fine-tuned Bayesian Ridge | clean_data_3 |    0.751822   |   0.035869   |  0.835099  |
+|  Baseline Bayesian Ridge  | clean_data_3 |    0.751822   |   0.035869   |  0.835099  |
+
+Since the original parameters from the Linear SVR have better performance in the test set, it is the best model from the selected ML algorithms to explain and predict the delivery time.
